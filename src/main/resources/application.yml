@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: TaskManagerBackend
+  data:
+    mongodb:
+      database: taskmanagerdb
+      host: localhost
+      port: 27017
