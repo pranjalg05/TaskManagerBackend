@@ -3,6 +3,7 @@ package projects.taskmanager.Utils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
@@ -12,7 +13,8 @@ import java.util.*;
 @Component
 public class JwtUtil {
 
-    private final String SECRET_KEY = "5ecc2dcba3931b72bb95c6c097080f8c";
+    @Value("${jwt.secret.key}")
+    private String SECRET_KEY;
 
     private SecretKey getSignKey(){
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());

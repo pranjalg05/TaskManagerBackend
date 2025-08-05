@@ -6,3 +6,6 @@ spring:
       database: taskmanagerdb
       host: localhost
       port: 27017
+jwt:
+  secret:
+    key: 5ecc2dcba3931b72bb95c6c097080f8c
