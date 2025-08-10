@@ -1,5 +1,6 @@
 package projects.taskmanager.Controller;
 
+import jakarta.validation.Valid;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,7 +41,7 @@ public class CollectionController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addNewCollection(@RequestBody Collection collection) {
+    public ResponseEntity<?> addNewCollection(@Valid @RequestBody Collection collection) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         if (collectionService.saveNewCollection(collection, username)) {

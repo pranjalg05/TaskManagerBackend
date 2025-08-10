@@ -1,5 +1,6 @@
 package projects.taskmanager.Entity;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,8 +22,7 @@ public class Collection {
 
     @Id
     private ObjectId collectionId;
-    @NonNull
-    @Indexed(unique = true)
+    @NotBlank
     private String collectionName;
     private CollectionType type;
     @DBRef

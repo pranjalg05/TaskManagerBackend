@@ -1,5 +1,6 @@
 package projects.taskmanager.Controller;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,7 +38,7 @@ public class PublicController {
     }
 
     @PostMapping("/sign-up")
-    public ResponseEntity<User> createUser(@RequestBody User user){
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user){
         if(userService.saveNewUser(user)){
             return new ResponseEntity<>(user, HttpStatus.CREATED);
         }
@@ -47,7 +48,7 @@ public class PublicController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User user){
+    public ResponseEntity<String> login(@Valid @RequestBody User user){
         try {
             manager.authenticate(
                     new UsernamePasswordAuthenticationToken(

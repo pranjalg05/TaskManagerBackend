@@ -36,7 +36,7 @@ public class CollectionService {
             user.getCollections().add(saved);
             userService.saveUser(user);
             return true;
-        } catch (MongoWriteException e){
+        } catch (Exception e){
             log.error("Error creating a new Collection ", e);
             return false;
         }

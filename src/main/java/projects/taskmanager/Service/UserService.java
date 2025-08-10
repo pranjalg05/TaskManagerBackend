@@ -33,7 +33,7 @@ public class UserService {
             user.getCollections().add(dailyCollection);
             userRepository.save(user);
             return true;
-        } catch (MongoWriteException e){
+        } catch (Exception e){
             log.error("User already exits: ", e.getMessage());
             return false;
         }

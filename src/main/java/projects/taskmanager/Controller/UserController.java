@@ -1,5 +1,6 @@
 package projects.taskmanager.Controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -23,7 +24,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @PutMapping("/update")
-    public ResponseEntity<User> put(@RequestBody User newUser) {
+    public ResponseEntity<User> put(@Valid @RequestBody User newUser) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         if(userService.updateUser(username, newUser)){

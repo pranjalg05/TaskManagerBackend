@@ -1,5 +1,6 @@
 package projects.taskmanager.Entity;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,9 +22,9 @@ public class User {
     @Id
     private ObjectId userId;
     @Indexed(unique = true)
-    @NonNull
+    @NotBlank
     private String username;
-    @NonNull
+    @NotBlank
     private String password;
     @DBRef
     private List<Collection> collections = new ArrayList<>();
