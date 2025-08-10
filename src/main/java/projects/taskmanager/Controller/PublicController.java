@@ -16,7 +16,7 @@ import projects.taskmanager.Utils.JwtUtil;
 
 @Slf4j
 @RestController
-@RequestMapping("/public")
+@RequestMapping("/api/public")
 public class PublicController {
 
     @Autowired

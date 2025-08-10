@@ -18,7 +18,7 @@ import projects.taskmanager.Service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user/collections/{collectionName}/tasks")
+@RequestMapping("/api/user/collections/{collectionName}/tasks")
 public class TaskController {
 
     @Autowired

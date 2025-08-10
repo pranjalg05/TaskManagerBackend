@@ -14,7 +14,7 @@ import projects.taskmanager.Repository.UserRepository;
 import projects.taskmanager.Service.UserService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
